@@ -8,64 +8,71 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
+    <header>
         <div class="container">
-            <h1 class="title">Welcome to <span class="highlight">Team 11</span></h1>
-            <p class="description">We love building solutions that make a difference. Discover our journey below.</p>
-            <a href="#projects" class="btn primary-btn">Explore Our Work</a>
+            <h1 class="fade-in">Welcome to <span class="highlight">Team 11's Portfolio</span></h1>
+            <p class="fade-in-delay">We create innovative solutions with passion for technology and problem-solving.</p>
+        </div>
+        <div class="image-container fade-in-up">
+            <img src="DAA CITY PLAN.png" alt="Project Image" class="header-image">
         </div>
     </header>
 
-    <section id="projects" class="projects">
+    <section class="projects fade-in">
         <div class="container">
-            <h2 class="section-title">Our Projects</h2>
-            <div class="project-cards">
-                <div class="card">
-                    <h3>Smart City Waste Management</h3>
-                    <p>A data-driven solution for efficient waste management in smart cities.</p>
+            <h2>🛠️ Featured Project</h2>
+            <p>A data-driven waste management system for smarter, sustainable cities.</p>
+        </div>
+    </section>
+
+    <section class="skills fade-in">
+        <div class="container">
+            <h2>🚀 Skills</h2>
+            <ul>
+                <li>C++, Python, JavaScript</li>
+                <li>Data Structures and Algorithms</li>
+                <li>Web Development (React.js, Node.js)</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="social-links fade-in">
+        <div class="container">
+            <h2>🌐 Connect with Us</h2>
+            <div class="social-buttons">
+                <a href="https://github.com/your-github-username" target="_blank" class="btn primary-btn">GitHub</a>
+                <a href="https://linkedin.com/in/your-linkedin-profile" target="_blank" class="btn primary-btn">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio-details fade-in-up">
+        <div class="container">
+            <h2>📚 Portfolio Details</h2>
+            <div class="details-container">
+                <div class="detail-item">
+                    <h3 class="detail-title">DAA</h3>
+                    <p>Algorithmic Problem Solving</p>
+                </div>
+                <div class="detail-item">
+                    <h3 class="detail-title">Course Code</h3>
+                    <p>01FE23BCI123</p>
+                </div>
+                <div class="detail-item">
+                    <h3 class="detail-title">Team Members</h3>
+                    <ul>
+                        <li>Rohit</li>
+                        <li>Riya</li>
+                        <li>Stuthi</li>
+                        <li>Sakshi</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Our Skills</h2>
-            <ul class="skills-list">
-                <li>Programming: C++, Python, JavaScript</li>
-                <li>Web Development: React.js, Node.js</li>
-                <li>Data Structures and Algorithms</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Us</h2>
-            <p class="about-text">We are a group of passionate individuals driven by technology and problem-solving. Our goal is to create impactful solutions.</p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>Made with ❤️ by Team 11</p>
-        </div>
+    <footer class="fade-in">
+        <blockquote>“The only way to do great work is to love what you do.” – Steve Jobs</blockquote>
     </footer>
-
-    <script>
-        // Fade-in animations on scroll
-        const sections = document.querySelectorAll('section');
-        const options = { threshold: 0.2 };
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, options);
-
-        sections.forEach(section => observer.observe(section));
-    </script>
 </body>
 </html>
