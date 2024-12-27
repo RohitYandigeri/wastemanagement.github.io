@@ -1,4 +1,4 @@
-/* Reset default styles */
+/* Reset Styles */
 * {
     margin: 0;
     padding: 0;
@@ -7,12 +7,13 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #e3f2fd;
-    color: #333;
+    background-color: #121212;
+    color: #e0e0e0;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* General container */
+/* General Container */
 .container {
     width: 90%;
     margin: 0 auto;
@@ -20,125 +21,161 @@ body {
 }
 
 /* Header Section */
-header {
-    background: linear-gradient(135deg, #4facfe, #00f2fe);
-    color: white;
-    padding: 60px 0;
+.header {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    border-bottom: 5px solid #fff;
+    background: linear-gradient(135deg, #1f1f1f, #333333);
+    animation: slideIn 1.5s ease-in-out;
 }
 
-header h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    letter-spacing: 1px;
+.title {
+    font-size: 3rem;
+    color: #ff6e40;
+    animation: fadeIn 2s ease-out;
 }
 
-header p {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
+.description {
+    font-size: 1.2rem;
+    margin: 20px 0;
 }
 
 .highlight {
-    color: #ffcc80;
-}
-
-.image-container {
-    margin-top: 30px;
-    text-align: center;
-}
-
-.header-image {
-    width: 100%;
-    max-width: 700px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Button styles */
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    font-size: 1.1rem;
-    margin-top: 20px;
-    text-decoration: none;
-    border-radius: 50px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    color: #64ffda;
 }
 
 .primary-btn {
-    background-color: #4facfe;
-    color: white;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    background-color: #ff6e40;
+    color: #121212;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
 }
 
 .primary-btn:hover {
-    background-color: #358eda;
-    transform: translateY(-3px);
+    transform: scale(1.1);
 }
 
-/* Section styles */
+/* Section Styles */
 section {
     padding: 60px 0;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #64ffda;
+}
+
+/* Projects Section */
+.projects {
+    background: #1f1f1f;
+    border-radius: 10px;
+}
+
+.project-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background: #292929;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+    width: 300px;
     text-align: center;
 }
 
-h2 {
-    font-size: 2.8rem;
-    margin-bottom: 30px;
-    color: #333;
+.card:hover {
+    transform: translateY(-10px);
 }
 
-ul {
-    list-style-type: none;
+/* Skills Section */
+.skills {
+    text-align: center;
+}
+
+.skills-list {
+    list-style: none;
+    margin-top: 20px;
     padding: 0;
+}
+
+.skills-list li {
+    margin-bottom: 10px;
+}
+
+/* About Section */
+.about {
+    background: linear-gradient(135deg, #292929, #333333);
+    border-radius: 10px;
+    text-align: center;
+    color: #e0e0e0;
+}
+
+.about-text {
+    margin-top: 20px;
     font-size: 1.2rem;
-}
-
-ul li {
-    margin-bottom: 15px;
-}
-
-/* Portfolio Details */
-.portfolio-details {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    padding: 40px;
-}
-
-.details-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.detail-item {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
-}
-
-.detail-title {
-    font-weight: 700;
-    font-size: 1.4rem;
-    color: #4facfe;
-    margin-bottom: 15px;
 }
 
 /* Footer */
 footer {
-    background-color: #4facfe;
-    color: white;
-    padding: 20px;
+    background: #121212;
+    padding: 20px 0;
     text-align: center;
+    color: #757575;
 }
 
-footer blockquote {
-    font-style: italic;
-    font-size: 1.2rem;
-    margin: 0;
+/* Animations */
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .primary-btn {
+        padding: 10px 20px;
+    }
+
+    .project-cards {
+        flex-direction: column;
+    }
 }
