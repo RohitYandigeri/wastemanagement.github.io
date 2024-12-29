@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Team Members</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"> <!-- Playfair Display Font -->
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+            color: #0B2545;
+            background-color: #EEF4ED;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #134074;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 2em 0;
+        }
+
+        .button {
+            background: #134074;
+            color: white;
+            padding: 1em;
+            margin: 1em 0;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            width: 100%;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+            background-color: #8DA9C4;
+        }
+
+        .team-list a {
+            color: #134074;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            margin: 0.5em 1em;
+            font-size: 1.2em;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .team-list a:hover {
+            color: #8DA9C4;
+            text-shadow: 0 0 8px #8DA9C4;
+        }
+
+        .assigned-work {
+            background-color: #EEF4ED;
+            padding: 1em;
+            margin: 1em 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .assigned-work-details {
+            display: none;
+            background-color: #134074;
+            color: white;
+            padding: 1em;
+            margin-top: 1em;
+            border-radius: 8px;
+            transition: max-height 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+
+        .assigned-work.open .assigned-work-details {
+            display: block;
+            max-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Course Team Members</h1>
+
+    <section class="container">
+        <!-- Details of Members Section -->
+        <h2>Details of Members</h2>
+        <button class="button">Member 1 Details</button>
+        <button class="button">Member 2 Details</button>
+        <button class="button">Member 3 Details</button>
+        <button class="button">Member 4 Details</button>
+
+        <!-- Team Members Section -->
+        <h2>Team Members</h2>
+        <div class="team-list">
+            <a href="https://github.com/member1"><i class="fab fa-github"></i>Member 1</a>
+            <a href="https://github.com/member2"><i class="fab fa-github"></i>Member 2</a>
+            <a href="https://github.com/member3"><i class="fab fa-github"></i>Member 3</a>
+            <a href="https://github.com/member4"><i class="fab fa-github"></i>Member 4</a>
+        </div>
+
+        <!-- Assigned Works Section -->
+        <h2>Assigned Works</h2>
+        <div class="assigned-work" onclick="toggleWorkDetails('work1')">
+            <h3>Member 1 Work Details</h3>
+            <div class="assigned-work-details" id="work1-details">
+                <p>Full information about Member 1's work goes here.</p>
+            </div>
+        </div>
+        <div class="assigned-work" onclick="toggleWorkDetails('work2')">
+            <h3>Member 2 Work Details</h3>
+            <div class="assigned-work-details" id="work2-details">
+                <p>Full information about Member 2's work goes here.</p>
+            </div>
+        </div>
+        <div class="assigned-work" onclick="toggleWorkDetails('work3')">
+            <h3>Member 3 Work Details</h3>
+            <div class="assigned-work-details" id="work3-details">
+                <p>Full information about Member 3's work goes here.</p>
+            </div>
+        </div>
+        <div class="assigned-work" onclick="toggleWorkDetails('work4')">
+            <h3>Member 4 Work Details</h3>
+            <div class="assigned-work-details" id="work4-details">
+                <p>Full information about Member 4's work goes here.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleWorkDetails(workId) {
+            const workElement = document.getElementById(workId + '-details').parentElement;
+            workElement.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
